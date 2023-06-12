@@ -110,7 +110,9 @@ p {
 }
 
 #mobile {
-  width: 375px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 375px;
   height: 100vh;
   position: relative;
 }

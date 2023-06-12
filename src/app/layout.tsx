@@ -1,3 +1,4 @@
+import Header from '@/components/common/Header';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
@@ -12,7 +13,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="kr">
       <body className={inter.className}>
-        <div className="w-full mx-auto max-w-[600px] bg-slate-300">{children}</div>
+        <div id="wrap">
+          <div id="mobile">
+            <Header />
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
