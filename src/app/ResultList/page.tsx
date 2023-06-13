@@ -16,7 +16,7 @@ const page = () => {
                       <div className="name">검은머리갈매기</div>
                     </div>
                     <div className="right">
-                      <img src="../../styles/images/bird/mbti/istp.svg" alt="" />
+                      <img src="/images/bird/mbti/istp.svg" alt="" />
                     </div>
                   </a>
                 </li>
@@ -27,7 +27,7 @@ const page = () => {
                       <div className="name">검은머리갈매기</div>
                     </div>
                     <div className="right">
-                      <img src="../../styles/images/bird/mbti/istp.svg" alt="" />
+                      <img src="/images/bird/mbti/istp.svg" alt="" />
                     </div>
                   </a>
                 </li>
@@ -38,7 +38,7 @@ const page = () => {
                       <div className="name">검은머리갈매기</div>
                     </div>
                     <div className="right">
-                      <img src="../../styles/images/bird/mbti/istp.svg" alt="" />
+                      <img src="/images/bird/mbti/istp.svg" alt="" />
                     </div>
                   </a>
                 </li>
