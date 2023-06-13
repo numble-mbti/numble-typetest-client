@@ -1,17 +1,23 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import LoginModal from '../LoginModal';
 
 const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   return (
-    <header>
-      <div className="gnb">
-        <div className="left_area"></div>
-        <div className="right_area">
-          <a href="javascript:void();" className="menu_button">
-            <span className="ico_header ico_header_menu"></span>
-          </a>
+    <>
+      <header>
+        <div className="gnb">
+          <div className="left_area"></div>
+          <div className="right_area">
+            <a className="menu_button" onClick={() => setIsModalOpen(true)}>
+              <span className="ico_header ico_header_menu"></span>
+            </a>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      {isModalOpen && <LoginModal setIsModalOpen={setIsModalOpen} />}
+    </>
   );
 };
 

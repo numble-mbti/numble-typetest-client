@@ -1,10 +1,7 @@
 'use client';
-import LoginModal from '@/components/LoginModal';
-import React, { useState } from 'react';
+import React from 'react';
 
 const page = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
   return (
     <>
       <div id="page_wrap" className="bird_test test_main">
@@ -37,14 +34,13 @@ const page = () => {
           </div>
           <div className="cont_block">
             <div className="content">
-              <a href="./bird_test.html" className="btn_type_b w100 btn_color_01">
+              <a className="btn_type_b w100 btn_color_01">
                 <span className="btn_txt">테스트 시작하기</span>
               </a>
             </div>
           </div>
         </section>
       </div>
-      {isModalOpen && <LoginModal setIsModalOpen={setIsModalOpen} />}
     </>
   );
 };
