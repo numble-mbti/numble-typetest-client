@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="kr">
       <body className={inter.className}>
         <div id="wrap">
-          <div id="mobile">
+          <div id="mobile" className="bg-gray-100">
             <Header />
             {children}
           </div>
