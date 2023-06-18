@@ -12,7 +12,7 @@ interface TypeTestProps {
 const TypeTest = ({ params: { slug } }: TypeTestProps) => {
   const router = useRouter();
   const handleClickTestStartBtn = (e: MouseEvent<HTMLButtonElement>) => {
-    router.push('/hi');
+    router.push(`/test/${slug}/quiz`);
   };
 
   return (

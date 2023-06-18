@@ -13,7 +13,11 @@ export default function Home() {
     <main className="p-4">
       <h2 className="text-2xl p-1">테스트 목록</h2>
       <ul className="p-4">
-        <li id="bird" className="bg-blue-300 p-4 rounded-full text-xl text-white" onClick={handleClickTest}>
+        <li
+          id="bird"
+          className="bg-blue-600 hover:bg-blue-500 p-4 rounded-full text-xl text-white cursor-pointer"
+          onClick={handleClickTest}
+        >
           멸종위기 새 테스트
         </li>
       </ul>

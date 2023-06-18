@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const page = () => {
@@ -161,7 +162,9 @@ const page = () => {
             </div>
           </div>
         </section>
-        <a>메인으로 꼬우</a>
+        <Link href="/" className="p-4 text-gray-500 hover:text-blue-600">
+          메인으로
+        </Link>
       </div>
     </div>
   );
