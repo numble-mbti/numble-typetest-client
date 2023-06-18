@@ -1,6 +1,23 @@
-import React from 'react';
+'use client';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
+import Analyzing from './Analyzing';
 
 const Quiz = () => {
+  const router = useRouter();
+  const [showAnalyzing, setShowAnalyzing] = useState(false);
+
+  const handleChooseOption = () => {
+    setShowAnalyzing(true);
+    setTimeout(() => {
+      router.push('/test/bird/result');
+    }, 1500);
+  };
+
+  if (showAnalyzing) {
+    return <Analyzing />;
+  }
+
   return (
     <div id="page_wrap" className="bird_test test_page">
       <section>
@@ -18,12 +35,12 @@ const Quiz = () => {
               <br />
               저기 멀리 나와 비슷한 크기의 새가 보인다.
             </div>
-            <a href="./bird_analysis.html" className="btn_type_b btn_color_05 w100">
+            <button className="btn_type_b btn_color_05 w100" onClick={handleChooseOption}>
               <span className="btn_txt">선택1</span>
-            </a>
-            <a href="./bird_analysis.html" className="btn_type_b btn_color_05 w100">
+            </button>
+            <button className="btn_type_b btn_color_05 w100" onClick={handleChooseOption}>
               <span className="btn_txt">선택2</span>
-            </a>
+            </button>
           </div>
         </div>
       </section>
