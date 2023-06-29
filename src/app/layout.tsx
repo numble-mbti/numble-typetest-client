@@ -1,6 +1,6 @@
-import { Inter } from 'next/font/google';
 import Header from '@/components/common/Header';
 import './globals.css';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -12,9 +12,6 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="kr">
-      <head>
-        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-      </head>
       <body className={inter.className}>
         <div id="wrap">
           <div id="mobile" className="bg-gray-100">
