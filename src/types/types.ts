@@ -16,7 +16,7 @@ export interface TestCategory {
 export interface TestQueriesDTO {
   data: {
     category_id: number;
-    questions: TestQueries[];
+    question: TestQueries[];
   };
   message: string;
 }
