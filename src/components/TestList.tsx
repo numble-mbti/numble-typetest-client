@@ -1,10 +1,10 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React, { MouseEvent } from 'react';
-import { getAllCategories } from '@/api/api';
 import useSWR from 'swr';
 import TestCard from './TestCard';
 import { Spinner } from './common/Spinner';
+import { getAllCategories } from '@/api/api';
 
 const TestList = () => {
   const router = useRouter();

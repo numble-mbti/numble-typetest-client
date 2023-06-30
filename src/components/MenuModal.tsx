@@ -28,10 +28,10 @@ const MenuModal = () => {
           </div>
           <div className="layer_cont">
             <div className="sub">친구와 테스트 결과를 비교해보세요!</div>
-            <a href="#" className="btn_signin btn_type_c w100 btn_color_02">
+            <a href="/" className="btn_signin btn_type_c w100 btn_color_02">
               <span className="btn_txt">카카오톡으로 친구 초대하기</span>
             </a>
-            <a href="#" className="btn_signin btn_type_c w100 btn_color_04">
+            <a href="/" className="btn_signin btn_type_c w100 btn_color_04">
               <span className="btn_txt">URL로 친구 초대하기</span>
             </a>
           </div>
