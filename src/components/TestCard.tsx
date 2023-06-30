@@ -10,7 +10,7 @@ interface TestCardProps {
 const TestCard = ({ onClick, data }: TestCardProps) => {
   return (
     <li
-      id={data.title}
+      id={String(data.id)}
       className="w-full bg-blue-600 hover:bg-blue-500 p-4 rounded-full text-xl text-white cursor-pointer"
       onClick={onClick}
     >
