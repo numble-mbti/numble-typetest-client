@@ -16,11 +16,11 @@ export interface TestCategory {
 export interface TestQueriesDTO {
   data: {
     category_id: number;
-    question: TestQueries[];
+    question: TestQuery[];
   };
   message: string;
 }
-export interface TestQueries {
+export interface TestQuery {
   answers: { type: MBTIType; content: string }[];
   content: string;
   indicator: IndicatorType;
