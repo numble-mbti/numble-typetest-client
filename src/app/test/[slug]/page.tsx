@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import { getTestQueries } from '@/api/api';
 import TestMain from '@/components/test/TestMain';
 import Query from '@/components/Query';
+import Analyzing from '@/components/Analyzing';
 
 interface TypeTestProps {
   params: {
@@ -18,7 +19,10 @@ const TypeTest = ({ params: { slug } }: TypeTestProps) => {
   return (
     <>
       {testProcess === 0 && <TestMain setTestProcess={setTestProcess} />}
-      {testProcess > 0 && data && <Query queries={data.data.question} />}
+      {testProcess > 0 && testProcess < 12 && data && (
+        <Query queries={data.data.question} testProcess={testProcess} setTestProcess={setTestProcess} />
+      )}
+      {testProcess == 12 && <Analyzing />}
     </>
   );
 };

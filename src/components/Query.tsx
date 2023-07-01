@@ -1,27 +1,46 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
-import Analyzing from './Analyzing';
+import React, { MouseEvent, useState } from 'react';
 import { TestQuery } from '@/types/types';
 
 interface QueryProps {
   queries: TestQuery[];
+  testProcess: number;
+  setTestProcess: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Query = ({ queries }: QueryProps) => {
-  const router = useRouter();
-  const [showAnalyzing, setShowAnalyzing] = useState(false);
+const initialTestScore = {
+  EI: 0,
+  SN: 0,
+  TF: 0,
+  JP: 0,
+};
 
-  const handleChooseOption = () => {
-    setShowAnalyzing(true);
-    setTimeout(() => {
-      router.push('/test/bird/result');
-    }, 1500);
+const Query = ({ queries, testProcess, setTestProcess }: QueryProps) => {
+  const {
+    answers: [choice1, choice2],
+    content,
+  } = queries[testProcess];
+
+  const [testResult, setTestResult] = useState(initialTestScore);
+
+  const handleClickQuery = (e: MouseEvent<HTMLButtonElement>) => {
+    const choiceType = e.currentTarget.value;
+    setTestProcess((prev) => prev + 1);
+    setTestResult((prev) => {
+      switch (choiceType) {
+        case 'E':
+          return { ...prev, EI: prev.EI + 1 };
+        case 'S':
+          return { ...prev, SN: prev.SN + 1 };
+        case 'T':
+          return { ...prev, TF: prev.TF + 1 };
+        case 'J':
+          return { ...prev, JP: prev.JP + 1 };
+        default:
+          return prev;
+      }
+    });
   };
-
-  if (showAnalyzing) {
-    return <Analyzing />;
-  }
 
   return (
     <div id="page_wrap" className="bird_test test_page">
@@ -35,17 +54,17 @@ const Query = ({ queries }: QueryProps) => {
             <div className="img_wrap">
               <img src="/images/bird/test/01.png" alt="첫번째 문제 이미지" />
             </div>
-            <div className="question">
-              당신은 방금 첫 비행을 성공한 아기새
-              <br />
-              저기 멀리 나와 비슷한 크기의 새가 보인다.
+            <div className="question">{content}</div>
+            <div className="btn_type_b btn_color_05 w100">
+              <button className="btn_txt" onClick={handleClickQuery} value={choice1.type}>
+                {choice1.content}
+              </button>
             </div>
-            <button className="btn_type_b btn_color_05 w100" onClick={handleChooseOption}>
-              <span className="btn_txt">선택1</span>
-            </button>
-            <button className="btn_type_b btn_color_05 w100" onClick={handleChooseOption}>
-              <span className="btn_txt">선택2</span>
-            </button>
+            <div className="btn_type_b btn_color_05 w100">
+              <button className="btn_txt" onClick={handleClickQuery} value={choice2.type}>
+                {choice2.content}
+              </button>
+            </div>
           </div>
         </div>
       </section>
