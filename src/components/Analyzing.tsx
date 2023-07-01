@@ -1,6 +1,17 @@
+'use client';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const Analyzing = () => {
+interface AnalyzingProps {
+  testId: number;
+}
+
+const Analyzing = ({ testId }: AnalyzingProps) => {
+  const router = useRouter();
+  setTimeout(() => {
+    router.push(`/test/${testId}/result`);
+  }, 1500);
+
   return (
     <div id="mobile">
       <div id="page_wrap" className="bird_test test_analysis">
