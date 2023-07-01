@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import Analyzing from './Analyzing';
 
-const Quiz = () => {
+const Query = () => {
   const router = useRouter();
   const [showAnalyzing, setShowAnalyzing] = useState(false);
 
@@ -48,4 +48,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default Query;
