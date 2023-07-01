@@ -22,7 +22,7 @@ const TypeTest = ({ params: { slug } }: TypeTestProps) => {
       {testProcess > 0 && testProcess < 13 && data && (
         <Query queries={data.data.question} testProcess={testProcess} setTestProcess={setTestProcess} />
       )}
-      {testProcess == 13 && <Analyzing />}
+      {testProcess == 13 && <Analyzing testId={slug} />}
     </>
   );
 };
