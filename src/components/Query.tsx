@@ -19,7 +19,7 @@ const Query = ({ queries, testProcess, setTestProcess }: QueryProps) => {
   const {
     answers: [choice1, choice2],
     content,
-  } = queries[testProcess];
+  } = queries[testProcess - 1];
 
   const [testResult, setTestResult] = useState(initialTestScore);
 
@@ -47,7 +47,7 @@ const Query = ({ queries, testProcess, setTestProcess }: QueryProps) => {
       <section>
         <div className="cont_block">
           <div className="title">
-            <span className="now yuji">1</span>
+            <span className="now yuji">{testProcess}</span>
             <span className="total yuji">12</span>
           </div>
           <div className="content">
