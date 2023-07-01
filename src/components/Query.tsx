@@ -2,8 +2,13 @@
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import Analyzing from './Analyzing';
+import { TestQuery } from '@/types/types';
 
-const Query = () => {
+interface QueryProps {
+  queries: TestQuery[];
+}
+
+const Query = ({ queries }: QueryProps) => {
   const router = useRouter();
   const [showAnalyzing, setShowAnalyzing] = useState(false);
 
