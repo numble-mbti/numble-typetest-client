@@ -21,7 +21,8 @@
     "prettier/prettier": [
       "error",
       {
-        "useTab": "false"
+        "useTab": "false",
+        "endOfLine": "auto"
       }
     ],
     "indent": ["error", 2],
