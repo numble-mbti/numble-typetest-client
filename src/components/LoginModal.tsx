@@ -1,4 +1,6 @@
-import React, { SetStateAction, useRef } from 'react';
+import React, { SetStateAction } from 'react';
+import { ssoLogin } from '@/api/user/api';
+// import useSWR from 'swr';
 
 interface LoginModalProps {
   setIsModalOpen: React.Dispatch<SetStateAction<boolean>>;
@@ -20,12 +22,14 @@ const LoginModal = ({ setIsModalOpen }: LoginModalProps) => {
           </div>
           <div className="layer_cont">
             <div className="sub">아직 회원이 아니세요?</div>
-            <a href="/" className="btn_signin btn_type_c w100 btn_color_02">
-              <span className="btn_txt">카카오계정으로 시작하기</span>
-            </a>
-            <a href="/" className="btn_signin btn_type_c w100 btn_color_03">
+            <p className="btn_signin btn_type_c w100 btn_color_02">
+              <span onClick={() => ssoLogin('kakao')} className="btn_txt">
+                카카오계정으로 시작하기
+              </span>
+            </p>
+            <p className="btn_signin btn_type_c w100 btn_color_03">
               <span className="btn_txt">구글 계정으로 시작하기</span>
-            </a>
+            </p>
           </div>
         </div>
       </div>
