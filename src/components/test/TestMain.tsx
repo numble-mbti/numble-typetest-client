@@ -1,5 +1,6 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 interface TestMainProps {
   setTestProcess: React.Dispatch<React.SetStateAction<number>>;
@@ -8,6 +9,12 @@ interface TestMainProps {
 const TestMain = ({ setTestProcess }: TestMainProps) => {
   const handleClickTestStartBtn = () => {
     setTestProcess((prev) => prev + 1);
+  };
+
+  const [copied, setCopied] = useState(false);
+  const currentUrl = window.location.href;
+  const handleClickUrlBtn = () => {
+    setCopied(true);
   };
   return (
     <div id="page_wrap" className="bird_test test_main">
@@ -28,10 +35,12 @@ const TestMain = ({ setTestProcess }: TestMainProps) => {
         <div className="cont_block share">
           <div className="title">친구한테도 알려주기</div>
           <div className="content">
-            <button className="btn_type_a btn_color_04">
-              <span className="ico_btn ico_btn_url"></span>
-              <span className="btn_txt">URL</span>
-            </button>
+            <CopyToClipboard text={currentUrl}>
+              <button className="btn_type_a btn_color_04" onClick={handleClickUrlBtn}>
+                <span className="ico_btn ico_btn_url"></span>
+                <span className="btn_txt"> {copied ? 'Copied!' : 'Copy URL'}</span>
+              </button>
+            </CopyToClipboard>
             <button className="btn_type_a btn_color_02">
               <span className="ico_btn ico_btn_kakao"></span>
               <span className="btn_txt">카카오</span>
