@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import useSWR from 'swr';
-import { getTestQueries } from '@/api/api';
+import { getTestQueries } from '@/api/test/api';
 import TestMain from '@/components/test/TestMain';
 import Query from '@/components/Query';
 import Analyzing from '@/components/Analyzing';
