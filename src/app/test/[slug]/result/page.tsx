@@ -1,7 +1,6 @@
 'use client';
 import { getTestResult } from '@/api/test/api';
 import TestResult from '@/components/test/TestResult';
-import Link from 'next/link';
 import React from 'react';
 import useSWR from 'swr';
 

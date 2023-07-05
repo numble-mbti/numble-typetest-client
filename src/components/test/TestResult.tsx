@@ -2,6 +2,19 @@ import { TestData } from '@/types/types';
 import Link from 'next/link';
 import React from 'react';
 import CopyURLBtn from '../common/copyURLBtn';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+const settings = {
+  dots: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  autoplay: true,
+  autoplaySpeed: 3000,
+};
 
 interface TestResultProps {
   result: TestData;
@@ -70,7 +83,7 @@ const TestResult = ({
             실제 <span className="highlight">{name}</span>는 어떤 새 일까요?
           </div>
           <div className="content">
-            <div className="img_slider">
+            <Slider {...settings}>
               <div>
                 <img src="/images/bird/original/istp-01.jpg" alt={name + '사진 1'} />
               </div>
@@ -80,7 +93,7 @@ const TestResult = ({
               <div>
                 <img src="/images/bird/original/istp-03.jpg" alt={name + '사진 3'} />
               </div>
-            </div>
+            </Slider>
             <ul className="type_point type_point_type_02">
               <li className="point_item">
                 국제적
