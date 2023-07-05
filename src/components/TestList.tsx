@@ -4,7 +4,7 @@ import React, { MouseEvent } from 'react';
 import useSWR from 'swr';
 import TestCard from './TestCard';
 import { Spinner } from './common/Spinner';
-import { getAllCategories } from '@/api/api';
+import { getAllCategories } from '@/api/test/api';
 
 const TestList = () => {
   const router = useRouter();

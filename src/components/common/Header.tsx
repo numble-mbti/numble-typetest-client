@@ -17,9 +17,7 @@ const Header = () => {
             <Link href="/">
               <BiHome />
             </Link>
-            <Link href="/" onClick={() => setIsModalOpen(true)}>
-              <BiMenu />
-            </Link>
+            <BiMenu onClick={() => setIsModalOpen(true)} />
           </div>
         </div>
       </header>
