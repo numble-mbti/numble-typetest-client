@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import CopyURLBtn from '../common/copyURLBtn';
+import CopyURLBtn from '../common/CopyURLBtn';
 
 interface TestMainProps {
   setTestProcess: React.Dispatch<React.SetStateAction<number>>;
