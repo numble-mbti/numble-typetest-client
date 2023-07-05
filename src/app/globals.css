@@ -652,6 +652,9 @@ section .title_area .title {
   font-size: 24px;
   font-weight: 500;
 }
+.layer_popup .btn_signin {
+  cursor: pointer;
+}
 .layer_popup .nickname {
   font-size: 24px;
   display: -webkit-box;
