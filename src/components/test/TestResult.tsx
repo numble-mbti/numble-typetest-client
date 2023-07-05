@@ -1,6 +1,7 @@
 import { TestData } from '@/types/types';
 import Link from 'next/link';
 import React from 'react';
+import CopyURLBtn from '../common/copyURLBtn';
 
 interface TestResultProps {
   result: TestData;
@@ -16,6 +17,8 @@ const TestResult = ({
     name,
   },
 }: TestResultProps) => {
+  const currentUrl = window.location.href;
+
   return (
     <div id="page_wrap" className="bird_test bird_result">
       <section>
@@ -160,10 +163,7 @@ const TestResult = ({
             <strong>멸종위기 야생동물 함께 지켜요!</strong>
           </div>
           <div className="content">
-            <button className="btn_type_a btn_color_04">
-              <span className="ico_btn ico_btn_url"></span>
-              <span className="btn_txt">URL</span>
-            </button>
+            <CopyURLBtn currentUrl={currentUrl} />
             <button className="btn_type_a btn_color_02">
               <span className="ico_btn ico_btn_kakao"></span>
               <span className="btn_txt">카카오</span>
