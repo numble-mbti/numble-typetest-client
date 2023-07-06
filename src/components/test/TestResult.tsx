@@ -50,7 +50,7 @@ const TestResult = ({
         <div className="title_area">
           <div className="title">당신은</div>
           <div className="img_wrap">
-            <img src={`/images/bird/mbti/esfj.png`} alt="당신은 검은검리갈매기" />
+            <img src={`/images/bird/mbti/${mbti}.png`} alt="당신은 검은검리갈매기" />
           </div>
         </div>
         <div className="cont_block">
