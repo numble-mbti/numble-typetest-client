@@ -19,6 +19,7 @@ const settings = {
 
 interface TestResultProps {
   result: TestData;
+  mbti: string;
 }
 
 const TestResult = ({
@@ -30,6 +31,7 @@ const TestResult = ({
     endangeredGrand,
     name,
   },
+  mbti,
 }: TestResultProps) => {
   const currentUrl = window.location.href;
 
@@ -48,7 +50,7 @@ const TestResult = ({
         <div className="title_area">
           <div className="title">당신은</div>
           <div className="img_wrap">
-            <img src="/images/bird/mbti/istp.svg" alt="당신은 검은검리갈매기" />
+            <img src={`/images/bird/mbti/esfj.png`} alt="당신은 검은검리갈매기" />
           </div>
         </div>
         <div className="cont_block">
