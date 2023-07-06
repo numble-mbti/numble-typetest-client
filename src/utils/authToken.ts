@@ -5,7 +5,7 @@ export const tokenCookie = {
     document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + '; path=/;';
   },
   getCookie: (name: string) => {
-    const value = document?.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
     return value ? value[2] : null;
   },
   deleteCookie: (name: string) => {

@@ -1,5 +1,6 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { BiMenu } from 'react-icons/bi';
 import Link from 'next/link';
 import ModalLayout from './ModalLayout';
@@ -9,15 +10,16 @@ import Image from 'next/image';
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const checkLoginStatus = () => {
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
     const accessToken = tokenCookie.getCookie('accessToken');
     if (accessToken) {
-      return true;
+      setIsLogin(true);
     } else {
-      return false;
+      setIsLogin(false);
     }
-  };
-  const isLogin = checkLoginStatus();
+  }, []);
 
   return (
     <>
