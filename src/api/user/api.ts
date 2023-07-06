@@ -50,7 +50,7 @@ export async function getAccessToken(social: string, code: string): Promise<T.OA
   return res.data;
 }
 
-export async function getMyTestResult(size?: number) {
+export async function getMyTestResult(size?: number): Promise<T.MyTestResultList> {
   const setUri = () => {
     if (size) {
       return `api/archives?size=${size}`;
@@ -62,4 +62,21 @@ export async function getMyTestResult(size?: number) {
   const res = await apiWithToken.get(uri);
 
   console.log(res);
+  return res.data;
+}
+
+export async function getMyResultWithCategory(categoryId: number): Promise<T.ArchiveWithCategory> {
+  const uri = `api/archives/${categoryId}`;
+  const res = await apiWithToken.get(uri);
+
+  console.log(res);
+  return res.data;
+}
+
+export async function editMyNickname(userId: number): Promise<T.UserData> {
+  const uri = `api/users?userId=${userId}`;
+  const res = await apiWithToken.get(uri);
+
+  console.log(res.status);
+  return res.data;
 }
