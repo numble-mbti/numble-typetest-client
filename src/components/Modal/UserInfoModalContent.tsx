@@ -24,10 +24,12 @@ const UserInfoModalContent = ({ setIsModalOpen, logout }: ModalProps) => {
             <span className="ico_btn ico_btn_arr_right_24"></span>
           </div>
           <div className="menu_list text-sm">
-            <span className="menu_item cursor-pointer w-auto" onClick={() => goToPage('/resultList')}>
+            <span className="menu_item cursor-pointer w-auto" onClick={() => goToPage('/resultlist')}>
               내 테스트 결과
             </span>
-            <span className="menu_item cursor-pointer w-auto">내 정보 설정</span>
+            <span className="menu_item cursor-pointer w-auto" onClick={() => goToPage('/myinfo')}>
+              내 정보 설정
+            </span>
           </div>
         </div>
       </div>

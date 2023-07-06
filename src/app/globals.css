@@ -119,9 +119,10 @@ p {
 
 #page_wrap {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 60px);
   overflow-y: auto;
   position: relative;
+  background-color: #fff;
 }
 
 header {
@@ -247,7 +248,7 @@ section .title_area .title {
   font-size: 60px;
 }
 .bird_test.test_main .img_wrap {
-  padding: 16px 8px 0;
+  padding: 8px 26px 0;
 }
 .bird_test.test_main .share {
   padding: 0 32px;
@@ -322,7 +323,7 @@ section .title_area .title {
 
 .cont_block {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 .cont_block:first-child {
   margin-top: 16px;
