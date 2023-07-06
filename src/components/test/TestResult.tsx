@@ -74,7 +74,7 @@ const TestResult = ({
               <li className="match_item">
                 <div className="good badge badge_type_02">환상의 궁합</div>
                 <div className="img_wrap">
-                  <img src="/images/bird/mbti/istp.svg" alt="검은머리갈매기" className="" />
+                  <img src={`/images/bird/mbti/${best.mbti_type}.png`} alt="검은머리갈매기" className="" style={{ margin: 'auto' }} />
                 </div>
                 <div className="type_name">{best.name}</div>
                 <div className="desc">{best.description}</div>
@@ -82,7 +82,7 @@ const TestResult = ({
               <li className="match_item">
                 <div className="bad badge badge_type_02">환장의 궁합</div>
                 <div className="img_wrap">
-                  <img src="/images/bird/mbti/istp.svg" alt="검은머리갈매기" className="" />
+                  <img src={`/images/bird/mbti/${worst.mbti_type}.png`} alt="검은머리갈매기" className="" style={{ margin: 'auto' }} />
                 </div>
                 <div className="type_name">{worst.name}</div>
                 <div className="desc">{worst.description}</div>
