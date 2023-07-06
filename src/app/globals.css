@@ -184,7 +184,7 @@ header .title_area {
 }
 header .title_area .title {
   font-size: 24px;
-  padding: 8px 10px 12px;
+  padding: 20px 0 15px;
 }
 header .logo {
   margin: 0 10px;
@@ -524,7 +524,7 @@ section .title_area .title {
 }
 
 .result_list {
-  background-color: #f4f4f4;
+  background-color: #fff;
 }
 .result_list section {
   margin: 0;
@@ -555,7 +555,6 @@ section .title_area .title {
 }
 .title_list .title {
   font-weight: 500;
-  font-size: 14px;
   padding: 16px 8px;
 }
 .title_list .title.sub {
@@ -687,7 +686,7 @@ section .title_area .title {
   margin: 16px 0;
 }
 .layer_popup .menu_list .menu_item {
-  width: calc(50% - 8px);
+  padding: 3px;
   font-size: 14px;
   color: #999;
 }
