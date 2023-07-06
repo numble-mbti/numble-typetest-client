@@ -3,9 +3,10 @@ import { useRouter } from 'next/navigation';
 
 interface ModalProps {
   setIsModalOpen: React.Dispatch<SetStateAction<boolean>>;
+  logout: () => void;
 }
 
-const UserInfoModalContent = ({ setIsModalOpen }: ModalProps) => {
+const UserInfoModalContent = ({ setIsModalOpen, logout }: ModalProps) => {
   const router = useRouter();
 
   const goToPage = (route: string) => {
@@ -38,6 +39,10 @@ const UserInfoModalContent = ({ setIsModalOpen }: ModalProps) => {
         <p className="btn_signin btn_type_c w100 btn_color_03">
           <span className="btn_txt">URL로 친구 초대하기</span>
         </p>
+      </div>
+
+      <div onClick={() => logout()} className="text-sm text-center underline mt-4 px-5 cursor-pointer decoration-gray-400 text-gray-400">
+        로그아웃
       </div>
     </div>
   );
