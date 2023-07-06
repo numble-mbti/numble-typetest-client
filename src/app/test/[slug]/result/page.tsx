@@ -13,8 +13,8 @@ interface TestResulPagetProps {
 }
 
 const TestResultPage = ({ params: { slug } }: TestResulPagetProps) => {
-  const { EI, SN, JP, TF } = useRecoilValue(mbtiResultAtom);
-  const mbti = (EI > 1 ? 'E' : 'I') + (SN > 1 ? 'S' : 'N') + (JP > 1 ? 'J' : 'P') + (TF > 1 ? 'T' : 'F');
+  const { EI, SN, TF, JP } = useRecoilValue(mbtiResultAtom);
+  const mbti = (EI > 1 ? 'E' : 'I') + (SN > 1 ? 'S' : 'N') + (TF > 1 ? 'T' : 'F') + (JP > 1 ? 'J' : 'P');
   const { data } = useSWR(`/api/mbti/${slug}/features`, () => getTestResult(slug, mbti));
   return data ? <TestResult result={data.data} mbti={mbti} /> : <div>Loading...</div>;
 };
