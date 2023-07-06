@@ -1,10 +1,11 @@
 import { TestData } from '@/types/types';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import CopyURLBtn from '../common/CopyURLBtn';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { shareKakao } from '@/api/util';
 
 const settings = {
   dots: true,
@@ -32,6 +33,15 @@ const TestResult = ({
 }: TestResultProps) => {
   const currentUrl = window.location.href;
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <div id="page_wrap" className="bird_test bird_result">
       <section>
@@ -177,7 +187,7 @@ const TestResult = ({
           </div>
           <div className="content">
             <CopyURLBtn currentUrl={currentUrl} />
-            <button className="btn_type_a btn_color_02">
+            <button className="btn_type_a btn_color_02" onClick={() => shareKakao(currentUrl, 'kakao')}>
               <span className="ico_btn ico_btn_kakao"></span>
               <span className="btn_txt">카카오</span>
             </button>
