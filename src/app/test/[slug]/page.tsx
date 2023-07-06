@@ -15,12 +15,11 @@ interface TypeTestProps {
 const TypeTest = ({ params: { slug } }: TypeTestProps) => {
   const { data } = useSWR('/api/queries', () => getTestQueries(slug));
   const [testProcess, setTestProcess] = useState(0);
-
   return (
     <>
       {testProcess === 0 && <TestMain setTestProcess={setTestProcess} />}
       {testProcess > 0 && testProcess < 13 && data && (
-        <Query queries={data.data.question} testProcess={testProcess} setTestProcess={setTestProcess} />
+        <Query queries={data.data.questions} testProcess={testProcess} setTestProcess={setTestProcess} />
       )}
       {testProcess == 13 && <Analyzing testId={slug} />}
     </>
