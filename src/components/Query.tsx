@@ -52,7 +52,7 @@ const Query = ({ queries, testProcess, setTestProcess }: QueryProps) => {
           </div>
           <div className="content">
             <div className="img_wrap">
-              <img src="/images/bird/test/01.png" alt="첫번째 문제 이미지" />
+              <img src={`/images/bird/test/q${testProcess}.png`} alt="첫번째 문제 이미지" />
             </div>
             <div className="question">{content}</div>
             <div className="btn_type_b btn_color_05 w100">
