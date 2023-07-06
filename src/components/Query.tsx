@@ -1,6 +1,8 @@
 'use client';
 import React, { MouseEvent, useState } from 'react';
 import { TestQuery } from '@/types/types';
+import { useSetRecoilState } from 'recoil';
+import { mbtiResultAtom } from '@/lib/recoil/atom';
 
 interface QueryProps {
   queries: TestQuery[];
@@ -22,6 +24,7 @@ const Query = ({ queries, testProcess, setTestProcess }: QueryProps) => {
   } = queries[testProcess - 1];
 
   const [testResult, setTestResult] = useState(initialTestScore);
+  const setMbtiResult = useSetRecoilState(mbtiResultAtom);
 
   const handleClickQuery = (e: MouseEvent<HTMLButtonElement>) => {
     const choiceType = e.currentTarget.value;
@@ -40,6 +43,9 @@ const Query = ({ queries, testProcess, setTestProcess }: QueryProps) => {
           return prev;
       }
     });
+    if (testProcess === 12) {
+      setMbtiResult(testResult);
+    }
   };
 
   return (
@@ -52,7 +58,7 @@ const Query = ({ queries, testProcess, setTestProcess }: QueryProps) => {
           </div>
           <div className="content">
             <div className="img_wrap">
-              <img src="/images/bird/test/01.png" alt="첫번째 문제 이미지" />
+              <img src={`/images/bird/test/q${testProcess}.png`} alt="첫번째 문제 이미지" />
             </div>
             <div className="question">{content}</div>
             <div className="btn_type_b btn_color_05 w100">
