@@ -1,48 +1,28 @@
+'use client';
 import React from 'react';
+import ResultBanner from '@/components/userResult/ResultBanner';
 
 const page = () => {
   return (
-    <div id="page_wrap" className="result_list">
+    <div id="page_wrap" className="result_list total">
+      <header>
+        <div className="title_area">
+          <h1 className="title text-2xl">내 테스트 결과</h1>
+        </div>
+      </header>
       <section>
         <div className="cont_block">
           <div className="content">
             <div className="title_list">
-              <div className="title sub">총 10개</div>
+              <h3 className="text-lg">새 테스트</h3>
               <ul>
-                <li>
-                  <a href="../bird/bird_result.html" className="">
-                    <div className="left">
-                      <div className="date">2023.06.03.</div>
-                      <div className="name">검은머리갈매기</div>
-                    </div>
-                    <div className="right">
-                      <img src="/images/bird/mbti/istp.svg" alt="" />
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="../bird/bird_result.html" className="">
-                    <div className="left">
-                      <div className="date">2023.06.03.</div>
-                      <div className="name">검은머리갈매기</div>
-                    </div>
-                    <div className="right">
-                      <img src="/images/bird/mbti/istp.svg" alt="" />
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="../bird/bird_result.html" className="">
-                    <div className="left">
-                      <div className="date">2023.06.03.</div>
-                      <div className="name">검은머리갈매기</div>
-                    </div>
-                    <div className="right">
-                      <img src="/images/bird/mbti/istp.svg" alt="" />
-                    </div>
-                  </a>
-                </li>
+                <ResultBanner />
               </ul>
+
+              <div className="btn_link w100">
+                <span className="btn_txt">테스트 결과 전체보기</span>
+                <span className="ico_btn ico_btn_arr_right_16"></span>
+              </div>
             </div>
           </div>
         </div>
