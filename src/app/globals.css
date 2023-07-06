@@ -41,6 +41,21 @@ button img {
 button * + .btn_txt {
   margin-left: 4px;
 }
+.edit_btn {
+  font-size: 20px !important;
+}
+.clear_btn {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+}
+.edit_form_wrap {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 ol,
 ul,
@@ -113,7 +128,7 @@ p {
   width: 100%;
   max-width: 500px;
   min-width: 375px;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 
