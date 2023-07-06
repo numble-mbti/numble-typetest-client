@@ -11,7 +11,7 @@ const OAuth = () => {
   if (typeof window !== 'undefined' && pathname === '/oauth2/kakao/redirect') {
     const code = new URL(window.location.href).searchParams.get('code');
     if (typeof code === 'string') {
-      const userData = getAccessToken('kakao', code);
+      getAccessToken('kakao', code);
 
       router.push('/');
     }
