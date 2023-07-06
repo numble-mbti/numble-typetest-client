@@ -268,8 +268,6 @@ section .title_area .title {
 .bird_test [class^='btn'] + [class^='btn'] {
   margin-top: 16px;
 }
-.bird_test.test_page header {
-}
 .bird_test.test_page section {
   margin-top: 72px;
 }

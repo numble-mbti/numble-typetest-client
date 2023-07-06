@@ -18,9 +18,9 @@ const LoginModalContent = () => {
         <p onClick={() => ssoLogin('kakao')} className="btn_signin btn_type_c w100 btn_color_02">
           <span className="btn_txt">카카오계정으로 시작하기</span>
         </p>
-        <p className="btn_signin btn_type_c w100 btn_color_03">
+        {/* <p onClick={() => ssoLogin('google')} className="btn_signin btn_type_c w100 btn_color_03">
           <span className="btn_txt">구글 계정으로 시작하기</span>
-        </p>
+        </p> */}
       </div>
     </div>
   );
