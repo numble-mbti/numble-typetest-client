@@ -116,7 +116,7 @@ const TestResult = ({
                 <img src="/images/bird/original/istp-03.jpg" alt={name + '사진 3'} />
               </div>
             </Slider>
-            <ul className="type_point type_point_type_02">
+            <ul className="type_point type_point_type_02 mt-10">
               <li className="point_item">
                 국제적
                 <strong>멸종위기종</strong>

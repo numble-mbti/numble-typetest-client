@@ -336,7 +336,7 @@ section .title_area .title {
 
 .cont_block {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 16px;
 }
 .cont_block:first-child {
   margin-top: 16px;
@@ -355,7 +355,7 @@ section .title_area .title {
   padding: 40px 32px;
 }
 .cont_block.share [class^='btn'] + [class^='btn'] {
-  margin-left: 16px;
+  margin-left: 10px;
   margin-top: 0;
 }
 
@@ -718,7 +718,7 @@ section .title_area .title {
 
 .btn_type_a {
   display: inline-block;
-  padding: 16px 24px;
+  padding: 12px 20px;
   border-radius: 28px;
 }
 .btn_type_b {
