@@ -7,22 +7,13 @@ interface MyResult {
 
 const ResultBanner = ({ data }: MyResult) => {
   const resultImage = `images/bird/mbti/${data.type.toLocaleLowerCase()}.png`;
-  let date = '';
-
-  for (let i = 0; i++; i <= 3) {
-    if (!i) {
-      date = `${data.created_at[i]}`;
-    }
-    date = `${date}` + '. ' + `${data.created_at[i]}`;
-  }
-
-  console.log(date);
+  const creDate = `${data.created_at[0]}. ${data.created_at[1]}. ${data.created_at[2]}.`;
 
   return (
     <div className="flex justify-between p-7 m-4 border-solid border border-gray-300 rounded-lg cursor-pointer">
       <div className="left">
-        <div className="date">${date}</div>
-        <div className="name">${data.result}</div>
+        <div className="date">{creDate}</div>
+        <div className="name">{data.result}</div>
       </div>
       <div className="right">
         <img src={resultImage} alt="결과 이미지" />
