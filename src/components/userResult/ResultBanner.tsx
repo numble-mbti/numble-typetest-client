@@ -6,7 +6,7 @@ interface MyResult {
 }
 
 const ResultBanner = ({ data }: MyResult) => {
-  const resultImage = `images/bird/mbti/${data.type}.png`;
+  const resultImage = `images/bird/mbti/${data.type.toLocaleLowerCase()}.png`;
   let date = '';
 
   for (let i = 0; i++; i <= 3) {
@@ -15,6 +15,8 @@ const ResultBanner = ({ data }: MyResult) => {
     }
     date = `${date}` + '. ' + `${data.created_at[i]}`;
   }
+
+  console.log(date);
 
   return (
     <div className="flex justify-between p-7 m-4 border-solid border border-gray-300 rounded-lg cursor-pointer">
