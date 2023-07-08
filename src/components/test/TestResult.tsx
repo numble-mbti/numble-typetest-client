@@ -50,7 +50,7 @@ const TestResult = ({
         <div className="title_area">
           <div className="title">당신은</div>
           <div className="img_wrap">
-            <img src={`/images/bird/mbti/${mbti}.png`} alt="당신은 검은검리갈매기" />
+            <img src={`/images/bird/mbti/${mbti.toLocaleLowerCase()}.png`} alt="테스트 결과 새 이미지" />
           </div>
         </div>
         <div className="cont_block">
@@ -74,7 +74,12 @@ const TestResult = ({
               <li className="match_item">
                 <div className="good badge badge_type_02">환상의 궁합</div>
                 <div className="img_wrap">
-                  <img src={`/images/bird/mbti/${best.mbti_type}.png`} alt="검은머리갈매기" className="" style={{ margin: 'auto' }} />
+                  <img
+                    src={`/images/bird/mbti/${best.mbti_type.toLocaleLowerCase()}.png`}
+                    alt="잘 맞는 새 이미지"
+                    className=""
+                    style={{ margin: 'auto' }}
+                  />
                 </div>
                 <div className="type_name">{best.name}</div>
                 <div className="desc">{best.description}</div>
@@ -82,7 +87,12 @@ const TestResult = ({
               <li className="match_item">
                 <div className="bad badge badge_type_02">환장의 궁합</div>
                 <div className="img_wrap">
-                  <img src={`/images/bird/mbti/${worst.mbti_type}.png`} alt="검은머리갈매기" className="" style={{ margin: 'auto' }} />
+                  <img
+                    src={`/images/bird/mbti/${worst.mbti_type.toLocaleLowerCase()}.png`}
+                    alt="잘 안 맞는 새 이미지"
+                    className=""
+                    style={{ margin: 'auto' }}
+                  />
                 </div>
                 <div className="type_name">{worst.name}</div>
                 <div className="desc">{worst.description}</div>
@@ -106,7 +116,7 @@ const TestResult = ({
                 <img src="/images/bird/original/istp-03.jpg" alt={name + '사진 3'} />
               </div>
             </Slider>
-            <ul className="type_point type_point_type_02">
+            <ul className="type_point type_point_type_02 mt-10">
               <li className="point_item">
                 국제적
                 <strong>멸종위기종</strong>
