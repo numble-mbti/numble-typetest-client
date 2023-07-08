@@ -61,7 +61,6 @@ export async function getMyTestResult(size?: number): Promise<T.MyTestResultList
   const uri = setUri();
   const res = await apiWithToken.get(uri);
 
-  console.log(res);
   return res.data;
 }
 

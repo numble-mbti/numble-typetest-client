@@ -11,11 +11,11 @@ export interface UserData {
   role: string;
 }
 
-interface Archive {
+export interface Archive {
   archive_seq: number;
   result: string;
   type: string;
-  created_at: string;
+  created_at: number[];
 }
 export interface ArchiveWithCategory {
   category_id: number;

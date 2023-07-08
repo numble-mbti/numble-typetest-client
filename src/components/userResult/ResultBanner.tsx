@@ -1,17 +1,29 @@
 import React from 'react';
+import { Archive } from '@/types/user';
 
-const ResultBanner = () => {
-  // const resultImage = `images/bird/mbti/${result}.svg`;
-  const resultImage = `images/bird/mbti/istp.svg`;
+interface MyResult {
+  data: Archive;
+}
+
+const ResultBanner = ({ data }: MyResult) => {
+  const resultImage = `images/bird/mbti/${data.type}.png`;
+  let date = '';
+
+  for (let i = 0; i++; i <= 3) {
+    if (!i) {
+      date = `${data.created_at[i]}`;
+    }
+    date = `${date}` + '. ' + `${data.created_at[i]}`;
+  }
 
   return (
     <div className="flex justify-between p-7 m-4 border-solid border border-gray-300 rounded-lg cursor-pointer">
       <div className="left">
-        <div className="date">2023.06.03.</div>
-        <div className="name">검은머리갈매기</div>
+        <div className="date">${date}</div>
+        <div className="name">${data.result}</div>
       </div>
       <div className="right">
-        <img src={resultImage} alt="" />
+        <img src={resultImage} alt="결과 이미지" />
       </div>
     </div>
   );
